@@ -1,3 +1,21 @@
+# DCTS-phpweb 
+A Web built with Laravel showcase information about 2021 NBA team and NBA players
+
+## Technologies Used
+
+* PHP
+* Wordpress
+* Bootstrap5
+* Animaition.js 
+* Wow.js
+* owl-carousel.js
+* SASS
+* CSS3
+* HTML5
+* InfinityFree(Hosting)
+
+### [https://nba-database.vercel.app](https://nba-database.vercel.app)
+
 === Understrap ===
 Contributors: howarddc
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, theme-options, translation-ready
