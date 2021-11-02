@@ -1,0 +1,682 @@
+@import "theme/theme_variables";  // <-------- Add your variables into this file. Also add variables to overwrite Bootstrap or Understrap variables here
+@import "assets/bootstrap4/bootstrap";      // <-------- Loads Bootstrap4
+@import "theme/understrap";  // <-------- Loads the Understrap defaults. Just a few classes to incorporate BS in WP
+@import "theme/colors";           // <-------- This creates the necessary bootstrap color classes.
+@import "theme/blocks";           // <-------- This adds Bootstrap styles to blocks.
+@import "theme/contact-form7";    // <-------- Contact Form 7 - Bootstrap 4 support
+@import "theme/woocommerce"; // <-------- Loads WooCommerce style fixes. Comment out if you aren't using WooCommerce
+
+// Optional files - If you dont use the corresponding scripts/fonts comment em out
+@import "assets/fontawesome/font-awesome";    // <-------- Font Awesome Icon font
+
+// Any additional imported files //
+@import "theme/theme";            // <-------- That's where you can add your own design. Thats your part!
+
+body {
+  font-family: $Righteous;
+  background-color: $secondary;
+  color:$textColor;
+}
+
+// Navbar
+#wrapper-navbar {
+  .top-header-holder {
+    padding:0;
+    height: 165px;
+    .container {
+      .row {
+        //Logo
+        .logo-holder {
+          .logo {
+            width: 180px;
+          }
+        }
+        //Reservation
+        .reservation-holder {
+          .contact-holder {
+            a {
+              display: inline-block;
+              margin-right: .5em;
+              color:$textColor;
+              text-decoration: none;
+              transition: 200ms ease-in-out 25ms;
+              &:hover {
+                color: #F0C42D;
+                cursor: pointer;
+              }
+            }
+            .phone, .address {
+              i {
+                color: $primary;
+                font-size: 1.2em;
+              }
+            }
+          }
+          .reservation-btn {
+            font-family: $RockSalt;
+            font-size: 25px;
+            button {
+              background:$primary;
+              border-radius: 32px;
+              color:$textColor;
+              padding: .8em 3em;
+              transition: 200ms ease-in-out 25ms;
+              &:hover {
+                color: #F0C42D;
+                background:rgb($primary, 0.8)
+              }
+            }
+          }
+        }
+        
+        // Social-media
+        .social-media-holder {
+          i {
+            color: $primary;
+            font-size: 40px;
+            padding: .2em;
+            transition: 200ms ease-in-out 25ms;
+            &:hover {
+              color: #F0C42D;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #main-nav {
+    border-top: 1px solid rgba(#000000, 0.5);
+    border-bottom: 1px solid rgba(#000000, 0.5);
+    padding: 0;
+    ul {
+      display: flex;
+      margin-left: 0 !important;
+      li {
+        padding: .5em 3em;
+        a {
+          color: $textColor;
+          text-transform: uppercase;
+          transition: 200ms ease-in-out 25ms;
+        }
+        a:hover {
+          color: #F0C42D;
+        }
+        &.current_page_item {
+          a {
+            color: #F0C42D;
+          }
+        }
+      }
+    }
+  }
+
+  .responsive-holder, .responsive-phone, .menu-btn {
+    display: none;
+  }
+  .responsive-phone {
+    a {
+      transition: 200ms ease-in-out 25ms;
+      &:hover {
+        color: #F0C42D;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+// Hero
+.home-banner {
+  height: 650px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('../img/banner.jpeg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 3em 5em;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .container {
+    .banner-content {
+      .banner-text {
+        font-size: 70px;
+        letter-spacing: 5px;
+      }
+      .banner-btn {
+        .btn {
+          background:$primary;
+          color:$textColor;
+          font-size: 20px;
+          padding: .8em 4em;
+          transition: 200ms ease-in-out 25ms;
+          margin: 1em 0;
+          border-radius: 2px;
+          &:hover {
+            color: #F0C42D;
+            background:rgb($primary, 0.8)
+          }
+        }
+      }
+    }
+  }
+}
+
+// Customers favorites
+.customers-favorites {
+  background-color: $secondary;
+  .row {
+    .dishes-wrap{
+      padding: 2em;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 3em;
+      .dishes {
+        width: 300px;
+        height: 300px;
+        background-color: $primary;
+        border-radius: 50%;
+        position: relative;
+        .images {
+          background-size: cover;
+          position: absolute;
+          top: 15px;
+          left: 15px;
+          bottom: 15px;
+          right: 15px;
+          border-radius: 50%;
+        }
+        .dishName {
+          position: absolute;
+          font-size: 20px;
+          bottom: -40px;
+          width: 100%;
+          text-align: center;
+        }
+        .priceTag {
+          font-size: 20px;
+          position: absolute;
+          left: 60%;
+          bottom: 45px;
+          padding: 0.5em 1.5em;
+          letter-spacing: 2px;
+          background-color: $priceTag;
+          width: 130px;
+          color: #000000;
+          border-radius: 0.25em;
+          border: 1px solid dotted;
+        }
+        .dish1 {
+          background-image: url(../img/f1.jpeg);
+        }
+        .dish2 {
+          background-image: url(../img/f2.jpeg);
+        }
+        .dish3 {
+          background-image: url(../img/f3.jpeg);
+        }
+        .dish4 {
+          background-image: url(../img/f4.jpeg);
+        }
+      }
+    }
+  }
+  .explore-menu-btn {
+    .btn {
+      background:$primary;
+      color:$textColor;
+      font-size: 20px;
+      padding: .8em 2em;
+      transition: 200ms ease-in-out 25ms;
+      margin: 1em 0;
+      border-radius: 2px;
+      &:hover {
+        color: #F0C42D;
+        background:rgb($primary, 0.8)
+      }
+    }
+  }
+}
+
+// About
+.home-about {
+  background-color: $primary;
+  .img-max-w {
+    max-width: 850px; 
+  }
+  .owl-theme .owl-nav.disabled+.owl-dots {
+    margin-top: 20px !important;
+  }
+  .about-text {
+    text-align: start;
+    max-width: 850px;
+    margin: auto;
+    padding-bottom: 2em;
+    font-size: 20px;
+  }  
+}
+
+// Location & Hours
+.home-location-hours {
+  background-color: $secondary;
+  #map {
+    width: 100%;
+    height: 500px;
+  }
+  .contact-address {
+    font-size: 20px;
+  }
+  .contact-openhours {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    p {
+      margin-bottom: 0;
+      font-size: 20px;
+    }
+  }
+  .get-directions-btn {
+    .btn {
+      background:$primary;
+      color:$textColor;
+      font-size: 20px;
+      padding: .8em 2em;
+      transition: 200ms ease-in-out 25ms;
+      margin: 1em 0;
+      border-radius: 2px;
+      &:hover {
+        color: #F0C42D;
+        background:rgb($primary, 0.8)
+      }
+    }
+  }
+  
+}
+
+// Contact Us
+.home-contact-us {
+  background-color: $primary;
+  .contact-from {
+    margin: 3em auto;
+    max-width: 800px;
+    background-color: #FFFFFF;
+    .contact-content  {
+      color: #000000;
+      font-family: 'Inter';
+      .submit-form-btn {
+        background:$primary;
+        color:$textColor;
+        font-size: 20px;
+        padding: .8em 3em;
+        transition: 200ms ease-in-out 25ms;
+        margin: 1em 0;
+        border-radius: 2px;
+        font-family: $Righteous;
+        &:hover {
+          color: #F0C42D;
+          background:rgb($primary, 0.8)
+        }
+      }
+    }
+  }
+}
+.dayActive {
+  color: $primary !important;
+}
+
+
+// Footer
+.site-footer {
+  .site-info {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    p {
+      font-size: 16px;
+      margin-bottom: 0;
+    }
+    .footer-social-media-holder {
+      i {
+        color: $primary;
+        font-size: 20px;
+        padding: .2em;
+        transition: 200ms ease-in-out 25ms;
+        &:hover {
+          color: #F0C42D;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+// Mobile responsive design
+@media only screen and (max-width: 1200px) {
+  .home-banner {
+    height: 500px;
+    .container {
+      .banner-content {
+        .banner-text {
+          font-size: 50px;
+        }
+        .banner-btn {
+          .btn {
+            font-size: 16px;
+            padding: .8em 4em;
+            margin: 1em 0;
+          }
+        }
+      }
+    }
+  } 
+}
+@media only screen and (max-width: 992px) {
+  #wrapper-navbar {
+    .top-header-holder {
+      .container {
+        .row {
+          .reservation-holder {
+            .contact-holder {
+              .phone, .address {
+                margin-bottom: .25em;
+              }
+            }
+          }
+          // Social-media
+          .social-media-holder {
+            i {
+              color: $primary;
+              font-size: 30px;
+              padding: .2em;
+              margin-bottom: .3em;
+            }
+          }
+        }
+      }
+    }
+    #main-nav {
+      ul {
+        li {
+          padding: .5em 2em; 
+        }
+      }
+    }
+  }
+  #navbarNavDropdown {
+    justify-content: center;
+  }
+}
+@media only screen and (max-width: 865px) {
+  .home-banner {
+    height: 375px;
+    .container {
+      .banner-content {
+        .banner-text {
+          font-size: 35px;
+          letter-spacing: 3px;
+        }
+        .banner-btn {
+          .btn {
+            background:$primary;
+            color:$textColor;
+            font-size: 16px;
+            padding: .5em 2.75em;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 770px) {
+  #wrapper-navbar #main-nav ul li {
+    padding: .5em 1em;
+  }
+  .top-header-holder {
+    padding:0.25em 0 !important;
+    height: auto !important;
+    .container {
+      max-width: 100%;
+      .row {
+        //Logo
+        .logo-holder {
+          display: flex;
+          justify-content: flex-end;
+          .logo {
+            width: 180px;
+          }
+        }
+        //Reservation
+        .reservation-holder {
+          .contact-holder {
+            font-size: 12px;
+            .py-3 {
+              padding-top: .5em !important;
+            }
+          }
+          .reservation-btn {
+            button {
+              padding: .8em 2em !important;
+              font-size: 15px !important;
+            }
+          }
+        }
+        // Social-media
+        .social-media-holder {
+          i {
+            color: $primary;
+            font-size: 40px;
+            padding: .2em;
+            transition: 200ms ease-in-out 25ms;
+            &:hover {
+              color: #F0C42D;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+  }
+  .customers-favorites {
+    background-color: $secondary;
+    min-height: 400px;
+    .favorites-sub-text {
+      padding: 0 5em;
+    }
+    .favorites-dishes {
+      .dishes-wrap{
+        margin-bottom: 2em;
+        .dishes {
+          width:200px;
+          height: 200px;
+          .images {
+            background-size: cover;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            bottom: 10px;
+            right: 10px;
+            border-radius: 50%;
+          }
+          .dishName, .priceTag {
+            font-size: 16px;
+          }
+          .priceTag {
+            width: auto;
+          }
+        }
+      }
+    }
+    
+  }
+
+  .about-text {
+    font-size: 16px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .home-banner {
+    height: 300px;
+  } 
+}
+@media only screen and (max-width: 575px) {
+  .top-header-holder {
+    display: none;
+  }
+  .responsive-holder {
+    position: relative;
+    display: flex !important;
+    align-items: end;
+    padding: 2em 0 1em 0;
+    .responsive-content {
+      display: flex !important;
+    }
+  }
+  .logo-img {
+    width: 145px;
+  }
+  .info-holder {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .restaurantName {
+    font-size: 20px;
+  }
+  .address {
+    display: flex !important;
+    margin-bottom: .5em;
+    i {
+      font-size: 34px;
+      margin-right: 5px;
+    }
+    span {
+      font-size: 12px;
+      color: $textColor;
+    }
+  }
+  .menu-btn {
+    display: block !important;
+    .menu {
+      margin-right: -10px;
+    }
+  }
+  .responsive-phone {
+    display: block !important;
+    padding: 0 1em !important;
+    a {
+      color: $textColor;
+    }
+  }
+  .reservation-btn {
+    font-family: $RockSalt;
+    button {
+      background:$primary;
+      border-radius: 32px;
+      color:$textColor;
+      padding: .8em 1.5em;
+      transition: 200ms ease-in-out 25ms;
+      font-size: 12px;
+      &:hover {
+        color: #F0C42D;
+        background:rgb($primary, 0.8)
+      }
+    }
+  }
+  .social-media-responsive{
+    display: flex;
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin: .5em;
+    i {
+      color: $primary;
+      font-size: 25px;
+      padding: .2em;
+      transition: 200ms ease-in-out 25ms;
+      &:hover {
+        color: #F0C42D;
+        cursor: pointer;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 515px) {
+  .home-banner {
+    padding: 2em;
+    height: 210px;
+    .container {
+      .banner-content {
+        .banner-text {
+          font-size: 23px;
+          letter-spacing: 3px;
+        }
+        .banner-btn {
+          .btn {
+            font-size: 14px;
+            padding: 0.3em 1.25em;
+            margin: .5em 0;
+          }
+        }
+      }
+    }
+  }
+  .customers-favorites {
+    .favorites-sub-text {
+      padding: 0 1em;
+    }
+  }
+}
+@media only screen and (max-width: 365px) {
+  .home-banner {
+    height: 170px;
+    .container {
+      .banner-content {
+        .banner-text {
+          font-size: 20px;
+          letter-spacing: 3px;
+        }
+        .banner-btn {
+          .btn {
+            font-size: 12px;
+            padding: 0.3em 1.55em;
+            margin: .5em 0;
+          }
+        }
+      }
+    }
+  } 
+  .logo, .social-media-responsive {
+    display: none;
+  }
+  .responsive-holder {
+    justify-content: center;
+  }
+  .customers-favorites {
+    h2 {
+      font-size: 1.5em;
+    }
+    .favorites-sub-text {
+      padding: 0!important;
+      font-size: 14px;
+    }
+  }
+}
+
+// Animation 
+.animate__delay_025s {
+  animation-delay: 0.25s;
+}
+.animate__delay_05s {
+  animation-delay: 0.5s;
+}
+.animate__delay_075s {
+  animation-delay: 0.75s;
+}
+.animate__duration-6s {
+  animation-duration: 6s;
+}
+.animate__duration_1_05s {
+  animation-duration: 1.5s;
+}
