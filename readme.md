@@ -1,5 +1,5 @@
-# DCTS-phpweb 
-A Web built with Laravel showcase information about 2021 NBA team and NBA players
+# Lin's Asian Express
+Custom Wordpress theme for Lin's Asian Express restaurant
 
 ## Technologies Used
 
@@ -14,7 +14,9 @@ A Web built with Laravel showcase information about 2021 NBA team and NBA player
 * HTML5
 * InfinityFree(Hosting)
 
-### [https://nba-database.vercel.app](https://nba-database.vercel.app)
+### [http://lae.epizy.com](http://lae.epizy.com)
+
+![Screenshot](/screenshot.png)
 
 === Understrap ===
 Contributors: howarddc
